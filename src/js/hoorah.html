@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Powaaah</title>
+</head>
+<body id="main">
+<p>Hello <span id=name>smart</span></p>
+
+</body>
+<script>
+    // let (es6) = var (es5)
+    class Selector extends HTMLElement {
+        construct(selector) {
+            // init method 
+            //Object.setPrototypeOf(this, window.__proto__);
+            this.selector = selector;
+            this.__initialize (); 
+        }
+
+        
+        __initElement() {
+            if(this.selector.startsWith("#")){
+                const elemId = this.selector.substring(1);
+                const e = document.getElementById(elemId);
+                return e;
+            } 
+            return null ;
+        }
+        __initialize() {
+            console.log("coucou bb!!!");
+            this.__initElement() ;
+
+        }
+    };
+    const name = new Selector( '#name' );
+    const body = new Selector( '#name');
+    window.onload = function(event) {
+    if(document.readyState=="complete"){
+        element = document.createElement("p");
+        element.innerHTML="hellllo";
+        body.appendChild(
+            element
+            );
+        }
+    };   
+</script>
+</html>
