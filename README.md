@@ -1,4 +1,4 @@
-Various code samples in php and javascript developed for educational purposes only. :-)
+Various code samples written for educational purposes only. :-)
 
 Happy hacking!
 
