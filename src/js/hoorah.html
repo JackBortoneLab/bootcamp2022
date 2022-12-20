@@ -11,32 +11,17 @@
 
 </body>
 <script>
-    // let (es6) = var (es5)
-    class Selector extends HTMLElement {
-        construct(selector) {
-            // init method 
-            //Object.setPrototypeOf(this, window.__proto__);
-            this.selector = selector;
-            this.__initialize (); 
-        }
-
-        
-        __initElement() {
-            if(this.selector.startsWith("#")){
-                const elemId = this.selector.substring(1);
-                const e = document.getElementById(elemId);
-                return e;
-            } 
-            return null ;
-        }
-        __initialize() {
-            console.log("coucou bb!!!");
-            this.__initElement() ;
-
-        }
+    var $ = function(selector){
+                if(selector.startsWith("#")){
+                        elemId = selector.substring(1);
+                        let e = document.getElementById(elemId);
+                        return e;
+                } else {
+                        return null;
+                }
     };
-    const name = new Selector( '#name' );
-    const body = new Selector( '#name');
+    let name = $('#name');
+    let body = $("#main");
     window.onload = function(event) {
     if(document.readyState=="complete"){
         element = document.createElement("p");
